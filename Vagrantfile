@@ -12,6 +12,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "3134Box"
 
+  # If the box is not installed or added to Vagrant yet, it will pull from this url
+  config.vm.box_url = "http://www.cs.columbia.edu/~cannon/vboxes/package.box"  
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.

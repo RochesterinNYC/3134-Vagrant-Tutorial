@@ -3,24 +3,50 @@ Vagrant Tutorial
 ####3134 - Data Structures in Java 
 -------
 
-###Terms:
+This a tutorial on how to use Vagrant to create and manage virtual machines (VMs) for 3134: Data Structures in Java. We will be using VMs in this class to standardize the development environment of the students as well as the testing environment for the TAs and Professor Blaer regarding homework assignments.
 
-####Virtual Machine
--
+-------
+
+###Table of Contents
+
+- [Term Definitions](#terms)
+- [Installation](#installation)
+- [Initial Setup](#setup)
+- [Starting the VM](#start)
+- [Shutting Down the VM](#shut-down)
+- [Example Workflow](#workflow)
+- [Demo](#demo)
+
+-------
+
+<div id="terms"></div>
+
+###Term Definitions:
+
+####Virtual Machine (VM)
+- Implementation/Simulation of a machine through software
+- "Computer within a computer"
 
 ####Vagrant
 - Wrapper for virtualbox operations and VM creation, configuration, management, etc.
 
 ####Virtualbox
-- Virtualization software that 
+- Virtualization software that can create and manage Virtual Machines on your machine running a variety of different operating systems and software
 
 ####Box
+- Package format for Vagrant environments that includes information like system settings, software, runtime environments, etc.
 
 ####Vagrantfile
+- Configuration file that describes the virtual machine and how to configure/provision them
+- Written in Ruby (but you don't need to really know Ruby to write/edit them)
 
 ####Shared Folder
+- A folder/directory that is shared between different machines
+- Ex. a directory shared between your laptop and the virtual machine it's running
 
 ------
+
+<div id="installation"></div>
 
 ###Installation:
 
@@ -32,13 +58,21 @@ Vagrant Tutorial
 
 <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">Virtual Downloads</a>
 
-Select downloads for appropriate OS.
+Select downloads for appropriate OS. Install the appropriate packages/software for your OS.
 
 ------
 
+<div id="setup"></div>
+
 ###Setup:
 
-####Setting up Box:
+####Setting up a Box:
+
+The box was created by Professor Cannon and details the standardized environment that the 1004 and 3134 classes will be using.
+
+Details:
+- Ubuntu 14.04 with Desktop
+- Openjdk7, Eclipse, and Gimp installed
 
 \- Download package.box
 
@@ -60,7 +94,7 @@ Ex:
 
     vagrant init
 
-\- Open the newly created Vagrantfile with a text editor and add the following lines of code at the bottom:
+\- Open the newly created Vagrantfile with a text editor and add the following lines of code at the bottom (above the "end" line):
 
 This specifies which box the VM to launch should use:
 
@@ -74,9 +108,12 @@ This allows for the GUI (if the box is set up with one) to appear:
 
 ------
 
+<div id="start"></div>
+
 ###Starting your VM:
 
 \- Go to the directory that contains your Vagrantfile.
+
 \- Run the following:
 
     vagrant up
@@ -91,6 +128,8 @@ will be the the same as
 on the virtual machine. All data is shared between the two without any VM restart necessary.
 
 ------
+
+<div id="shut-down"></div>
 
 ###Shutting Down the VM:
 
@@ -110,7 +149,7 @@ Halt: Does not save your VM's disk storage or state. Removes all traces of your 
 
     vagrant destroy
 
-Note: Way to start the VM after any of these is still
+Note: The command to start the VM after any of these is still
 
     vagrant up
 
@@ -129,6 +168,8 @@ Ex.
 
 ------
 
+<div id="workflow"></div>
+
 ###Example Workflow:
 
 - Create hw/project directory.
@@ -141,11 +182,14 @@ Either:
   - SSH into the VM with vagrant ssh
   - Work within the GUI of the VM
 - Compile, run, and test (make sure you're running these in the VM to ensure compatibility with TA/Professor grading/testing environment)
-- when done with programming session or hw, shut down with vagrant suspend, halt, or destroy
+- When done with programming session or hw, shut down VM with vagrant suspend, halt, or destroy
 
-- Once vagrant and virtualbox are installed, box is added, then all you need to do to boot VMs is vagrant up with a Vagrantfile in directory.
-vagrant up in subdirectories is also possible: link
+- Note: Once vagrant and virtualbox are installed and the box is added, then all you need to do to boot VMs is vagrant up with a Vagrantfile in directory.
+- Note: Running vagrant up in subdirectories is also possible: <a href="https://docs.vagrantup.com/v2/vagrantfile/index.html" target="_blank">Vagrantfile Command Lookup path</a>
+
 ------
+
+<div id="commands"></div>
 
 ###Useful Vagrant commands:
 
@@ -183,32 +227,15 @@ Destroy VM:
     
     vagrant destroy
 
-talk about .vagrant directory
+------
 
-    Bringing machine 'default' up with 'virtualbox' provider...
-    ==> default: Importing base box '3134Box'...
-    ==> default: Matching MAC address for NAT networking...
-    ==> default: Setting the name of the VM: Vagrant_default_1410852242789_98187
-    ==> default: Clearing any previously set network interfaces...
-    ==> default: Preparing network interfaces based on configuration...
-        default: Adapter 1: nat
-    ==> default: Forwarding ports...
-        default: 22 => 2222 (adapter 1)
-    ==> default: Booting VM...
-    ==> default: Waiting for machine to boot. This may take a few minutes...
-        default: SSH address: 127.0.0.1:2222
-        default: SSH username: vagrant
-        default: SSH auth method: private key
-        default: Warning: Connection timeout. Retrying...
-        default: Warning: Connection timeout. Retrying...
-        default: Warning: Connection timeout. Retrying...
-        default: Warning: Connection timeout. Retrying...
-        default: Warning: Remote connection disconnect. Retrying...
-    ==> default: Machine booted and ready!
-    ==> default: Checking for guest additions in VM...
-    ==> default: Mounting shared folders...
-        default: /vagrant => /Users/Rochester/Documents/3134-TA-Fall-2014/Vagrant
+<div id="demo"></div>
 
+###OSPrint Demo:
+
+- Clone this repo, install and setup your Vagrant, Virtualbox, and Vagrantfile.
+- Start up a VM.
+- Run the OSPrint Java program on your local machine and your virtual machine and observe the differences in output.
 
         dyn-160-39-228-106:Vagrant Rochester$ make
         javac -g OSPrint.java
@@ -232,7 +259,6 @@ talk about .vagrant directory
         User: vagrant
         Java Home Directory: /usr/lib/jvm/java-7-openjdk-amd64/jre
 
-
-        - Notice that the make on the VM produces the "make: Nothing to be done for `default'." message because the java files were already compiled on your machine and the directory is shared so the .class files are already present when make is ran on the VM.
-        - Notice the different operating systems, java version, where java is located, and the user names.
-        - Architecture is actually the same (x86_64 and amd64 are just different names for same architecture)
+- Notice that the make on the VM produces the "make: Nothing to be done for `default'." message because the java files were already compiled on your machine and the directory is shared so the .class files are already present when make is ran on the VM.
+- Notice the different operating systems, java version, where java is located, and the user names.
+- Architecture is actually the same (x86_64 and amd64 are just different names for same architecture)
