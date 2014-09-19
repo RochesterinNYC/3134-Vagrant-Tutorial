@@ -1,8 +1,7 @@
 /**
  * <b>OSPrint class</b>
  * <p>
- * This class prints the name of the operating system that is running on the
- * machine that runs this program.
+ * This class prints the system properties of the machine that runs this program.
  * <p>
  * Used for Vagrant demonstration/tutorial.
  */

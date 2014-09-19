@@ -1,4 +1,4 @@
-Vagrant Tutorial
+[http://rochesterinnyc.github.io/3134-Vagrant-Tutorial/](Vagrant Tutorial)
 ---
 ####3134 - Data Structures in Java 
 -------
@@ -9,17 +9,20 @@ This a tutorial on how to use Vagrant to create and manage virtual machines (VMs
 
 ###Table of Contents
 
-- [Term Definitions](#terms)
+- [Terms/Definitions](#terms)
 - [Installation](#installation)
 - [Initial Setup](#setup)
 - [Starting the VM](#start)
-- [Shutting Down the VM](#shut-down)
+- [Shutting Down the VM](#shutdown)
 - [Example Workflow](#workflow)
+- [Useful Commands](#commands)
 - [Demo](#demo)
+- [Other Notes](#other)
+- [References/Documentation](#docs)
 
 -------
 
-<div id="terms"></div>
+<div id="terms">
 
 ###Term Definitions:
 
@@ -44,9 +47,11 @@ This a tutorial on how to use Vagrant to create and manage virtual machines (VMs
 - A folder/directory that is shared between different machines
 - Ex. a directory shared between your laptop and the virtual machine it's running
 
+</div>
+
 ------
 
-<div id="installation"></div>
+<div id="installation">
 
 ###Installation:
 
@@ -60,33 +65,40 @@ This a tutorial on how to use Vagrant to create and manage virtual machines (VMs
 
 Select downloads for appropriate OS. Install the appropriate packages/software for your OS.
 
+</div>
+
 ------
 
-<div id="setup"></div>
+<div id="setup">
 
 ###Setup:
 
 ####Setting up a Box:
 
 The box was created by Professor Cannon and details the standardized environment that the 1004 and 3134 classes will be using.
+James Wen modified it to include vim and emacs
 
 Details:
+
 - Ubuntu 14.04 with Desktop
 - Openjdk7, Eclipse, and Gimp installed
+- Text Editors: Vim and emacs
 
-\- Download package.box
+\- Get 3134-VM.box file from a 3134 distributed USB flash drive or from Professor Blaer's website when it's up
 
-\- Go to directory containing package.box
+\- Go to directory containing 3134-VM.box
 
 \- Run box add command:
 
-    vagrant box add [boxFile] --name [BoxName]
+    vagrant box add [boxFile] --name [boxName]
 
 Ex:
  
-    vagrant box add package.box --name 3134Box
+    vagrant box add 3134-VM.box --name 3134Box
 
 3134Box is now the name of your box.
+
+\- Note: Expect running this command to take a while.
 
 ####Setting up Vagrantfile:
 
@@ -106,9 +118,15 @@ This allows for the GUI (if the box is set up with one) to appear:
       vb.gui = true
     end
 
+Optional - If Vagrant cannot locate your specified box (not added or publicly available), it will pull the box from the specified url. (Professor Cannon's box does not have vim or emacs installed off the bat).
+
+    config.vm.box_url = "http://www.cs.columbia.edu/~cannon/vboxes/package.box"  
+
+</div>
+
 ------
 
-<div id="start"></div>
+<div id="start">
 
 ###Starting your VM:
 
@@ -117,6 +135,8 @@ This allows for the GUI (if the box is set up with one) to appear:
 \- Run the following:
 
     vagrant up
+
+\- Note: Running this command without having any VM suspended or halted will take a while to boot up the VM.
 
 ####Shared Folders:
 
@@ -127,9 +147,11 @@ will be the the same as
 
 on the virtual machine. All data is shared between the two without any VM restart necessary.
 
+</div>
+
 ------
 
-<div id="shut-down"></div>
+<div id="shutdown">
 
 ###Shutting Down the VM:
 
@@ -166,9 +188,11 @@ Ex.
 
     shutdown -h now
 
+</div>
+
 ------
 
-<div id="workflow"></div>
+<div id="workflow">
 
 ###Example Workflow:
 
@@ -187,9 +211,11 @@ Either:
 - Note: Once vagrant and virtualbox are installed and the box is added, then all you need to do to boot VMs is vagrant up with a Vagrantfile in directory.
 - Note: Running vagrant up in subdirectories is also possible: <a href="https://docs.vagrantup.com/v2/vagrantfile/index.html" target="_blank">Vagrantfile Command Lookup path</a>
 
+</div>
+
 ------
 
-<div id="commands"></div>
+<div id="commands">
 
 ###Useful Vagrant commands:
 
@@ -227,15 +253,19 @@ Destroy VM:
     
     vagrant destroy
 
+</div>
+
 ------
 
-<div id="demo"></div>
+<div id="demo">
 
 ###OSPrint Demo:
 
-- Clone this repo, install and setup your Vagrant, Virtualbox, and Vagrantfile.
-- Start up a VM.
+- Clone this repo <a href="https://github.com/RochesterinNYC/3134-Vagrant-Tutorial">repo</a>, install and setup your Vagrant, Virtualbox, and Vagrantfile.
+- Start up your VM.
 - Run the OSPrint Java program on your local machine and your virtual machine and observe the differences in output.
+
+Example:
 
         dyn-160-39-228-106:Vagrant Rochester$ make
         javac -g OSPrint.java
@@ -262,3 +292,28 @@ Destroy VM:
 - Notice that the make on the VM produces the "make: Nothing to be done for `default'." message because the java files were already compiled on your machine and the directory is shared so the .class files are already present when make is ran on the VM.
 - Notice the different operating systems, java version, where java is located, and the user names.
 - Architecture is actually the same (x86_64 and amd64 are just different names for same architecture)
+
+</div>
+
+------
+
+<div id="other">
+
+###Other Notes:
+
+- If you idle for too long or encounter the Ubuntu login screen (should say CS@CU), the password will be "vagrant" as this is the default password set by Vagrant.
+- Please do not submit Vagrantfiles for your assignments, and **especially do not submit box files**.
+
+</div>
+
+------
+
+<div id="docs">
+
+###References/Documentation:
+
+<a href="https://docs.vagrantup.com/v2/">Vagrant</a>
+
+</div>
+
+<a href="https://www.virtualbox.org/wiki/Documentation">Virtualbox</a>
