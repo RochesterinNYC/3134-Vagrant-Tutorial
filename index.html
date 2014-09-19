@@ -1,56 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="3134-vagrant-tutorial : Vagrant Tutorial/Notes for 3134: Data Structures in Java">
+    <title>3134 - Data Structures in Java: Vagrant Tutorial/Notes by RochesterinNYC</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>3134-vagrant-tutorial</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>3134 - Data Structures in Java: Vagrant Tutorial/Notes</h1>
+        <p>Vagrant Tutorial/Notes for 3134: Data Structures in Java</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/RochesterinNYC/3134-Vagrant-Tutorial">View on GitHub</a>
+        <p class="view"><a href="https://github.com/RochesterinNYC/3134-Vagrant-Tutorial">View the Project on GitHub <small>RochesterinNYC/3134-Vagrant-Tutorial</small></a></p>
 
-          <h1 id="project_title">3134-vagrant-tutorial</h1>
-          <h2 id="project_tagline">Vagrant Tutorial/Notes for 3134: Data Structures in Java</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/RochesterinNYC/3134-Vagrant-Tutorial/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/RochesterinNYC/3134-Vagrant-Tutorial/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+        <ul>
+          <li><a href="https://github.com/RochesterinNYC/3134-Vagrant-Tutorial/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/RochesterinNYC/3134-Vagrant-Tutorial/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/RochesterinNYC/3134-Vagrant-Tutorial">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h2>
-<a name="vagrant-tutorial" class="anchor" href="#vagrant-tutorial"><span class="octicon octicon-link"></span></a>Vagrant Tutorial</h2>
+<a name="vagrant-tutorial" class="anchor" href="#vagrant-tutorial"><span class="octicon octicon-link"></span></a><a href="http://rochesterinnyc.github.io/3134-Vagrant-Tutorial/">Vagrant Tutorial</a>
+</h2>
 
 <h4>
 <a name="3134---data-structures-in-java" class="anchor" href="#3134---data-structures-in-java"><span class="octicon octicon-link"></span></a>3134 - Data Structures in Java</h4>
 
-<hr><p>The following is a tutorial/notes on how to use Vagrant to create and manage virtual machines (VMs) for 3134: Data Structures in Java. We will be using VMs in this class to standardize the development environment of the students as well as the testing environment for the TAs and Professor Blaer regarding homework assignments.</p>
+<hr><p>This a tutorial on how to use Vagrant to create and manage virtual machines (VMs) for 3134: Data Structures in Java. We will be using VMs in this class to standardize the development environment of the students as well as the testing environment for the TAs and Professor Blaer regarding homework assignments.</p>
 
 <hr><h3>
 <a name="table-of-contents" class="anchor" href="#table-of-contents"><span class="octicon octicon-link"></span></a>Table of Contents</h3>
 
 <ul>
-<li><a href="#terms">Term Definitions</a></li>
+<li><a href="#terms">Terms/Definitions</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#setup">Initial Setup</a></li>
 <li><a href="#start">Starting the VM</a></li>
-<li><a href="#shut-down">Shutting Down the VM</a></li>
+<li><a href="#shutdown">Shutting Down the VM</a></li>
 <li><a href="#workflow">Example Workflow</a></li>
+<li><a href="#commands">Useful Commands</a></li>
 <li><a href="#demo">Demo</a></li>
-</ul><hr><div></div>
+<li><a href="#other">Other Notes</a></li>
+<li><a href="#docs">References/Documentation</a></li>
+</ul><hr><p><a name="terms"></a></p>
 
 <h3>
 <a name="term-definitions" class="anchor" href="#term-definitions"><span class="octicon octicon-link"></span></a>Term Definitions:</h3>
@@ -88,7 +89,7 @@
 <ul>
 <li>A folder/directory that is shared between different machines</li>
 <li>Ex. a directory shared between your laptop and the virtual machine it's running</li>
-</ul><hr><div></div>
+</ul><hr><p><a name="installation"></a></p>
 
 <h3>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation:</h3>
@@ -105,7 +106,7 @@
 
 <p>Select downloads for appropriate OS. Install the appropriate packages/software for your OS.</p>
 
-<hr><div></div>
+<hr><p><a name="setup"></a></p>
 
 <h3>
 <a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>Setup:</h3>
@@ -113,28 +114,32 @@
 <h4>
 <a name="setting-up-a-box" class="anchor" href="#setting-up-a-box"><span class="octicon octicon-link"></span></a>Setting up a Box:</h4>
 
-<p>The box was created by Professor Cannon and details the standardized environment that the 1004 and 3134 classes will be using.</p>
+<p>The box was created by Professor Cannon and details the standardized environment that the 1004 and 3134 classes will be using.
+The box was modified by James Wen to include vim and emacs.</p>
 
 <p>Details:</p>
 
 <ul>
 <li>Ubuntu 14.04 with Desktop</li>
 <li>Openjdk7, Eclipse, and Gimp installed</li>
-</ul><p>- Download package.box</p>
+<li>Text Editors: Vim and emacs</li>
+</ul><p>- Get 3134-VM.box file from a 3134 distributed USB flash drive or from Professor Blaer's website when it's up</p>
 
-<p>- Go to directory containing package.box</p>
+<p>- Go to directory containing 3134-VM.box</p>
 
 <p>- Run box add command:</p>
 
-<pre><code>vagrant box add [boxFile] --name [BoxName]
+<pre><code>vagrant box add [boxFile] --name [boxName]
 </code></pre>
 
 <p>Ex:</p>
 
-<pre><code>vagrant box add package.box --name 3134Box
+<pre><code>vagrant box add 3134-VM.box --name 3134Box
 </code></pre>
 
 <p>3134Box is now the name of your box.</p>
+
+<p>- Note: Expect running this command to take a while.</p>
 
 <h4>
 <a name="setting-up-vagrantfile" class="anchor" href="#setting-up-vagrantfile"><span class="octicon octicon-link"></span></a>Setting up Vagrantfile:</h4>
@@ -158,7 +163,12 @@
 end
 </code></pre>
 
-<hr><div></div>
+<p>Optional - If Vagrant cannot locate your specified box (not added or publicly available), it will pull the box from the specified url. (Professor Cannon's box does not have vim or emacs installed off the bat).</p>
+
+<pre><code>config.vm.box_url = "http://www.cs.columbia.edu/~cannon/vboxes/package.box"  
+</code></pre>
+
+<hr><p><a name="start"></a></p>
 
 <h3>
 <a name="starting-your-vm" class="anchor" href="#starting-your-vm"><span class="octicon octicon-link"></span></a>Starting your VM:</h3>
@@ -170,18 +180,19 @@ end
 <pre><code>vagrant up
 </code></pre>
 
+<p>- Note: Running this command without having any VM suspended or halted will take a while to boot up the VM.</p>
+
 <h4>
 <a name="shared-folders" class="anchor" href="#shared-folders"><span class="octicon octicon-link"></span></a>Shared Folders:</h4>
 
-<p>The directory that you launched the VM from on your machine
-will be the the same as </p>
+<p>The directory that you launched the VM from on your machine will be the the same as </p>
 
 <pre><code>/vagrant/ 
 </code></pre>
 
 <p>on the virtual machine. All data is shared between the two without any VM restart necessary.</p>
 
-<hr><div></div>
+<hr><p><a name="shutdown"></a></p>
 
 <h3>
 <a name="shutting-down-the-vm" class="anchor" href="#shutting-down-the-vm"><span class="octicon octicon-link"></span></a>Shutting Down the VM:</h3>
@@ -227,7 +238,7 @@ From fastest to slowest: vagrant suspend, vagrant halt, vagrant destroy</p>
 <pre><code>shutdown -h now
 </code></pre>
 
-<hr><div></div>
+<hr><p><a name="workflow"></a></p>
 
 <h3>
 <a name="example-workflow" class="anchor" href="#example-workflow"><span class="octicon octicon-link"></span></a>Example Workflow:</h3>
@@ -255,7 +266,7 @@ Either:
 <li><p>Note: Once vagrant and virtualbox are installed and the box is added, then all you need to do to boot VMs is vagrant up with a Vagrantfile in directory.</p></li>
 <li>Note: Running vagrant up in subdirectories is also possible: <a href="https://docs.vagrantup.com/v2/vagrantfile/index.html" target="_blank">Vagrantfile Command Lookup path</a>
 </li>
-</ul><hr><div></div>
+</ul><hr><p><a name="commands"></a></p>
 
 <h3>
 <a name="useful-vagrant-commands" class="anchor" href="#useful-vagrant-commands"><span class="octicon octicon-link"></span></a>Useful Vagrant commands:</h3>
@@ -302,56 +313,67 @@ Either:
 <pre><code>vagrant destroy
 </code></pre>
 
-<hr><div></div>
+<hr><p><a name="demo"></a></p>
 
 <h3>
 <a name="osprint-demo" class="anchor" href="#osprint-demo"><span class="octicon octicon-link"></span></a>OSPrint Demo:</h3>
 
 <ul>
-<li>Clone this repo, install and setup your Vagrant, Virtualbox, and Vagrantfile.</li>
-<li>Start up a VM.</li>
-<li>
-<p>Run the OSPrint Java program on your local machine and your virtual machine and observe the differences in output.</p>
+<li>Clone this repo <a href="https://github.com/RochesterinNYC/3134-Vagrant-Tutorial">repo</a>, install and setup your Vagrant, Virtualbox, and Vagrantfile.</li>
+<li>Start up your VM.</li>
+<li>Run the OSPrint Java program on your local machine and your virtual machine and observe the differences in output.</li>
+</ul><p>Example:</p>
 
-<pre><code>dyn-160-39-228-106:Vagrant Rochester$ make
-javac -g OSPrint.java
-dyn-160-39-228-106:Vagrant Rochester$ make run
-java OSPrint
-This machine is running with the following properties:
-Operating System: Mac OS X 10.9.4
-Java Version: 1.7.0_67
-Architecture: x86_64
-User: Rochester
-Java Home Directory: /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/jre
+<pre><code>    dyn-160-39-228-106:Vagrant Rochester$ make
+    javac -g OSPrint.java
+    dyn-160-39-228-106:Vagrant Rochester$ make run
+    java OSPrint
+    This machine is running with the following properties:
+    Operating System: Mac OS X 10.9.4
+    Java Version: 1.7.0_67
+    Architecture: x86_64
+    User: Rochester
+    Java Home Directory: /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/jre
 
-vagrant@base2:/vagrant$ make
-make: Nothing to be done for `default'.
-vagrant@base2:/vagrant$ make run
-java OSPrint
-This machine is running with the following properties:
-Operating System: Linux 3.13.0-35-generic
-Java Version: 1.7.0_65
-Architecture: amd64
-User: vagrant
-Java Home Directory: /usr/lib/jvm/java-7-openjdk-amd64/jre
+    vagrant@base2:/vagrant$ make
+    make: Nothing to be done for `default'.
+    vagrant@base2:/vagrant$ make run
+    java OSPrint
+    This machine is running with the following properties:
+    Operating System: Linux 3.13.0-35-generic
+    Java Version: 1.7.0_65
+    Architecture: amd64
+    User: vagrant
+    Java Home Directory: /usr/lib/jvm/java-7-openjdk-amd64/jre
 </code></pre>
-</li>
-<li><p>Notice that the make on the VM produces the "make: Nothing to be done for `default'." message because the java files were already compiled on your machine and the directory is shared so the .class files are already present when make is ran on the VM.</p></li>
+
+<ul>
+<li>Notice that the make on the VM produces the "make: Nothing to be done for `default'." message because the java files were already compiled on your machine and the directory is shared so the .class files are already present when make is ran on the VM.</li>
 <li>Notice the different operating systems, java version, where java is located, and the user names.</li>
 <li>Architecture is actually the same (x86_64 and amd64 are just different names for same architecture)</li>
-</ul>
-      </section>
-    </div>
+</ul><hr><p><a name="other"></a></p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">3134-vagrant-tutorial maintained by <a href="https://github.com/RochesterinNYC">RochesterinNYC</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+<h3>
+<a name="other-notes" class="anchor" href="#other-notes"><span class="octicon octicon-link"></span></a>Other Notes:</h3>
+
+<ul>
+<li>If you idle for too long or encounter the Ubuntu login screen (should say CS@CU), the password will be "vagrant" as this is the default password set by Vagrant.</li>
+<li>Please do not submit Vagrantfiles for your assignments, and <strong>especially do not submit box files</strong>.</li>
+</ul><hr><p><a name="docs"></a></p>
+
+<h3>
+<a name="referencesdocumentation" class="anchor" href="#referencesdocumentation"><span class="octicon octicon-link"></span></a>References/Documentation:</h3>
+
+<p><a href="https://docs.vagrantup.com/v2/">Vagrant</a></p>
+
+<p><a href="https://www.virtualbox.org/wiki/Documentation">Virtualbox</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/RochesterinNYC">RochesterinNYC</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-
   </body>
 </html>
