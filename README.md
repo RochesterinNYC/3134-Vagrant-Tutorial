@@ -22,7 +22,7 @@ This a tutorial on how to use Vagrant to create and manage virtual machines (VMs
 
 -------
 
-<div id="terms">
+<div id="terms"></div>
 
 ###Term Definitions:
 
@@ -47,11 +47,9 @@ This a tutorial on how to use Vagrant to create and manage virtual machines (VMs
 - A folder/directory that is shared between different machines
 - Ex. a directory shared between your laptop and the virtual machine it's running
 
-</div>
-
 ------
 
-<div id="installation">
+<div id="installation"></div>
 
 ###Installation:
 
@@ -65,11 +63,9 @@ This a tutorial on how to use Vagrant to create and manage virtual machines (VMs
 
 Select downloads for appropriate OS. Install the appropriate packages/software for your OS.
 
-</div>
-
 ------
 
-<div id="setup">
+<div id="setup"></div>
 
 ###Setup:
 
@@ -122,11 +118,9 @@ Optional - If Vagrant cannot locate your specified box (not added or publicly av
 
     config.vm.box_url = "http://www.cs.columbia.edu/~cannon/vboxes/package.box"  
 
-</div>
-
 ------
 
-<div id="start">
+<div id="start"></div>
 
 ###Starting your VM:
 
@@ -146,11 +140,9 @@ The directory that you launched the VM from on your machine will be the the same
 
 on the virtual machine. All data is shared between the two without any VM restart necessary.
 
-</div>
-
 ------
 
-<div id="shutdown">
+<div id="shutdown"></div>
 
 ###Shutting Down the VM:
 
@@ -187,11 +179,9 @@ Ex.
 
     shutdown -h now
 
-</div>
-
 ------
 
-<div id="workflow">
+<div id="workflow"></div>
 
 ###Example Workflow:
 
@@ -210,11 +200,9 @@ Either:
 - Note: Once vagrant and virtualbox are installed and the box is added, then all you need to do to boot VMs is vagrant up with a Vagrantfile in directory.
 - Note: Running vagrant up in subdirectories is also possible: <a href="https://docs.vagrantup.com/v2/vagrantfile/index.html" target="_blank">Vagrantfile Command Lookup path</a>
 
-</div>
-
 ------
 
-<div id="commands">
+<div id="commands"></div>
 
 ###Useful Vagrant commands:
 
@@ -252,11 +240,9 @@ Destroy VM:
     
     vagrant destroy
 
-</div>
-
 ------
 
-<div id="demo">
+<div id="demo"></div>
 
 ###OSPrint Demo:
 
@@ -292,27 +278,21 @@ Example:
 - Notice the different operating systems, java version, where java is located, and the user names.
 - Architecture is actually the same (x86_64 and amd64 are just different names for same architecture)
 
-</div>
-
 ------
 
-<div id="other">
+<div id="other"></div>
 
 ###Other Notes:
 
 - If you idle for too long or encounter the Ubuntu login screen (should say CS@CU), the password will be "vagrant" as this is the default password set by Vagrant.
 - Please do not submit Vagrantfiles for your assignments, and **especially do not submit box files**.
 
-</div>
-
 ------
 
-<div id="docs">
+<div id="docs"></div>
 
 ###References/Documentation:
 
 <a href="https://docs.vagrantup.com/v2/">Vagrant</a>
-
-</div>
 
 <a href="https://www.virtualbox.org/wiki/Documentation">Virtualbox</a>
