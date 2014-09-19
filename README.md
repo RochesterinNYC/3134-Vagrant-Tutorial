@@ -1,4 +1,4 @@
-[http://rochesterinnyc.github.io/3134-Vagrant-Tutorial/](Vagrant Tutorial)
+[Vagrant Tutorial](http://rochesterinnyc.github.io/3134-Vagrant-Tutorial/)
 ---
 ####3134 - Data Structures in Java 
 -------
@@ -76,7 +76,7 @@ Select downloads for appropriate OS. Install the appropriate packages/software f
 ####Setting up a Box:
 
 The box was created by Professor Cannon and details the standardized environment that the 1004 and 3134 classes will be using.
-James Wen modified it to include vim and emacs
+The box was modified by James Wen to include vim and emacs.
 
 Details:
 
@@ -140,8 +140,7 @@ Optional - If Vagrant cannot locate your specified box (not added or publicly av
 
 ####Shared Folders:
 
-The directory that you launched the VM from on your machine
-will be the the same as 
+The directory that you launched the VM from on your machine will be the the same as 
     
     /vagrant/ 
 
