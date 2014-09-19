@@ -22,7 +22,7 @@ This a tutorial on how to use Vagrant to create and manage virtual machines (VMs
 
 -------
 
-<div id="terms"></div>
+<a name="terms"></a>
 
 ###Term Definitions:
 
@@ -49,7 +49,7 @@ This a tutorial on how to use Vagrant to create and manage virtual machines (VMs
 
 ------
 
-<div id="installation"></div>
+<a name="installation"></a>
 
 ###Installation:
 
@@ -65,7 +65,7 @@ Select downloads for appropriate OS. Install the appropriate packages/software f
 
 ------
 
-<div id="setup"></div>
+<a name="setup"></a>
 
 ###Setup:
 
@@ -120,7 +120,7 @@ Optional - If Vagrant cannot locate your specified box (not added or publicly av
 
 ------
 
-<div id="start"></div>
+<a name="start"></a>
 
 ###Starting your VM:
 
@@ -142,7 +142,7 @@ on the virtual machine. All data is shared between the two without any VM restar
 
 ------
 
-<div id="shutdown"></div>
+<a name="shutdown"></a>
 
 ###Shutting Down the VM:
 
@@ -181,7 +181,7 @@ Ex.
 
 ------
 
-<div id="workflow"></div>
+<a name="workflow"></a>
 
 ###Example Workflow:
 
@@ -202,7 +202,7 @@ Either:
 
 ------
 
-<div id="commands"></div>
+<a name="commands"></a>
 
 ###Useful Vagrant commands:
 
@@ -242,7 +242,7 @@ Destroy VM:
 
 ------
 
-<div id="demo"></div>
+<a name="demo"></a>
 
 ###OSPrint Demo:
 
@@ -280,7 +280,7 @@ Example:
 
 ------
 
-<div id="other"></div>
+<a name="other"></a>
 
 ###Other Notes:
 
@@ -289,7 +289,7 @@ Example:
 
 ------
 
-<div id="docs"></div>
+<a name="docs"></a>
 
 ###References/Documentation:
 
