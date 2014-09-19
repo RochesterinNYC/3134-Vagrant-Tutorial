@@ -114,10 +114,6 @@ This allows for the GUI (if the box is set up with one) to appear:
       vb.gui = true
     end
 
-Optional - If Vagrant cannot locate your specified box (not added or publicly available), it will pull the box from the specified url. (Professor Cannon's box does not have vim or emacs installed off the bat).
-
-    config.vm.box_url = "http://www.cs.columbia.edu/~cannon/vboxes/package.box"  
-
 ------
 
 <a name="start"></a>
